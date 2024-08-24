@@ -1,13 +1,43 @@
 import { defineConfig } from 'vitepress'
+import fs from 'fs'
+import path from 'path'
 
-// https://vitepress.dev/reference/site-config
+function getSidebarItems(dir) {
+  const fullPath = path.resolve(process.cwd(), dir)
+
+  function walkDir(currentPath, basePath = '') {
+    const items = []
+    const files = fs.readdirSync(currentPath)
+
+    files.forEach(file => {
+      const filePath = path.join(currentPath, file)
+      const stat = fs.statSync(filePath)
+
+      if (stat.isDirectory()) {
+        items.push({
+          text: file,
+          collapsible: true,
+          items: walkDir(filePath, path.join(basePath, file))
+        })
+      } else if (file.endsWith('.md')) {
+        const name = file.replace('.md', '')
+        const linkPath = `/${path.join('articles/Tutorial', basePath, name).replace(/\\/g, '/')}` // 不包含 docs
+        items.push({ text: name, link: linkPath })
+      }
+    })
+
+    return items
+  }
+
+  return walkDir(fullPath)
+}
+
 export default defineConfig({
-  base: '/',
+  base: '/', // 确保 base 配置正确
   title: "Neat科技",
   description: "A VitePress Site",
-  
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -16,10 +46,7 @@ export default defineConfig({
     sidebar: [
       {
         text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
+        items: getSidebarItems('docs/articles/Tutorial') // 动态生成
       }
     ],
 
@@ -43,36 +70,11 @@ export default defineConfig({
         ],
         sidebar: [
           {
-            text: '示例',
-            items: [
-              { text: 'Markdown 示例', link: '/markdown-examples' },
-              { text: 'Runtime API 示例', link: '/api-examples' }
-            ]
+            text: '博客搭建教程',
+            items: getSidebarItems('docs/articles/Tutorial') // 动态生成
           }
         ]
       }
     },
-    en: {
-      label: 'English',
-      lang: 'en-US',
-      link: '/en/',
-      themeConfig: {
-        nav: [
-          { text: 'Home', link: '/en/' },
-          { text: 'Examples', link: '/en/markdown-examples' }
-        ],
-        sidebar: [
-          {
-            text: 'Examples',
-            items: [
-              { text: 'Markdown Examples', link: '/en/markdown-examples' },
-              { text: 'Runtime API Examples', link: '/en/api-examples' }
-            ]
-          }
-        ],
-      }
-    }
   },
-
-
 })

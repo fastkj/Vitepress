@@ -15,7 +15,7 @@ hero:
       link: /markdown-examples
     - theme: alt
       text: 官方文档
-      link: /api-examples
+      link: articles/Tutorial/Hexo
     - theme: alt
       text: vitepress部署笔记
       link: articles/vitepress
