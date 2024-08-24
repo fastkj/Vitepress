@@ -21,7 +21,7 @@ Hugo 是一个基于 Go 语言的静态网站生成器，以其速度和灵活�
 
 使用 [Chocolatey](https://chocolatey.org/) 进行安装：
 
-```bash
+```md
 choco install hugo -confirm
 ```
 
@@ -29,7 +29,7 @@ choco install hugo -confirm
 
 使用 [Homebrew](https://brew.sh/) 进行安装：
 
-```bash
+```md
 brew install hugo
 ```
 
@@ -37,13 +37,13 @@ brew install hugo
 
 使用包管理器进行安装，例如 `apt`（适用于 Debian/Ubuntu）：
 
-```bash
+```md
 sudo apt-get install hugo
 ```
 
 安装完成后，可以通过以下命令验证安装是否成功：
 
-```bash
+```md
 hugo version
 ```
 
@@ -51,7 +51,7 @@ hugo version
 
 在终端中，导航到你希望创建博客的目录，然后运行以下命令：
 
-```bash
+```md
 hugo new site my-blog
 cd my-blog
 ```
@@ -62,7 +62,7 @@ cd my-blog
 
 Hugo 支持多种主题，可以在 [Hugo Themes](https://themes.gohugo.io/) 找到并选择一个主题。例如，安装 `Ananke` 主题：
 
-```bash
+```md
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 echo 'theme = "ananke"' >> config.toml
@@ -72,7 +72,7 @@ echo 'theme = "ananke"' >> config.toml
 
 你可以使用以下命令创建一篇新的文章：
 
-```bash
+```md
 hugo new posts/my-first-post.md
 ```
 
@@ -82,7 +82,7 @@ hugo new posts/my-first-post.md
 
 在项目根目录下，使用以下命令启动本地服务器：
 
-```bash
+```md
 hugo server -D
 ```
 
@@ -103,8 +103,8 @@ hugo server -D
 
 在项目根目录下创建一个 `deploy.sh` 文件，并添加以下内容：
 
-```bash
-#!/bin/bash
+```md
+#!/bin/md
 
 # 如果没有配置全局用户名和邮箱，可以取消以下注释进行设置
 # git config --global user.name "Your Name"
@@ -127,7 +127,7 @@ cd ..
 
 请将 `username` 替换为你的 GitHub 用户名。然后，为脚本赋予执行权限：
 
-```bash
+```md
 chmod +x deploy.sh
 ```
 
@@ -135,7 +135,7 @@ chmod +x deploy.sh
 
 在项目根目录下运行以下命令部署你的博客：
 
-```bash
+```md
 ./deploy.sh
 ```
 
@@ -151,7 +151,7 @@ chmod +x deploy.sh
 
 你可以使用以下命令清理缓存：
 
-```bash
+```md
 hugo --gc
 ```
 
@@ -161,19 +161,19 @@ hugo --gc
 
 **Windows:**
 
-```bash
+```md
 choco upgrade hugo
 ```
 
 **macOS:**
 
-```bash
+```md
 brew upgrade hugo
 ```
 
 **Linux:**
 
-```bash
+```md
 sudo apt-get upgrade hugo
 ```
 
