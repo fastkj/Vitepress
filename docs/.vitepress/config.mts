@@ -65,7 +65,8 @@ export default defineConfig({
         returnToTopLabel: '返回顶部',
         sidebarMenuLabel: '菜单',
         socialLinks: [
-          { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+          { icon: 'twitter', link: 'https://fastkj.top' },
+          
         ],
         search: {
           provider: 'local'
