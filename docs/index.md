@@ -15,10 +15,10 @@ hero:
       link: /markdown-examples
     - theme: alt
       text: 部署文档
-      link: articles/Tutorial/Hexo
+      link: articles/Tutorial/Hexo博客创建与部署
     - theme: alt
-      text: vitepress部署笔记
-      link: articles/Tutorial/vitepress笔记
+      text: Termux命令大全
+      link: articles/Tutorial/Termux/Termux命令大全
 
 features:
   - title: "Quick起始页 🚀"
