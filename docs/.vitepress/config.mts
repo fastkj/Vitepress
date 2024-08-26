@@ -33,34 +33,12 @@ function getSidebarItems(dir) {
 }
 
 export default defineConfig({
-  base: '/', // 确保 base 配置正确
+  base: '/', 
   title: "Neat科技",
   description: "A VitePress Site",
   head: [
-    // 添加 favicon 的配置，确保路径正确
     ['link', { rel: 'icon', href: '/icons/my-icon.png' }]
   ],
-
-  themeConfig: {
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: getSidebarItems('docs/articles/Tutorial') // 动态生成
-      }
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ],
-    search: {
-      provider: 'local'
-    }
-  },
 
   locales: {
     root: {
@@ -70,15 +48,30 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '首页', link: '/' },
-          { text: '示例', link: '/markdown-examples' }
+          { text: '示例', link: '/markdown-examples' },
+          { text: '自定义菜单名称', link: '/custom-link' }
         ],
         sidebar: [
           {
             text: '部署相关笔记',
-            items: getSidebarItems('docs/articles/Tutorial') // 动态生成
+            items: getSidebarItems('docs/articles/Tutorial')
           }
-        ]
+        ],
+        outlineTitle: '文章目录',
+        docFooter: {
+          prev: '上一篇',
+          next: '下一篇'
+        },
+        darkModeSwitchLabel: '外观',
+        returnToTopLabel: '返回顶部',
+        sidebarMenuLabel: '菜单',
+        socialLinks: [
+          { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+        ],
+        search: {
+          provider: 'local'
+        }
       }
-    },
-  },
+    }
+  }
 })
