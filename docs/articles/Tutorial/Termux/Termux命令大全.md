@@ -1,6 +1,6 @@
 # Termux 命令大全
 
-Termux 是一个非常强大的安卓终端模拟器，可以通过命令行进行各种操作。以下是一些常用的 Termux 命令及其注释。
+整理了一些Termux相关的部署环境命令，仅是一些常用的未完善。
 
 ## 包管理命令
 
@@ -67,7 +67,11 @@ Termux 是一个非常强大的安卓终端模拟器，可以通过命令行进�
 - `pkg autoremove` # 自动移除不再需要的包
 - `apt list --upgradable` # 列出可以升级的包
 - `apt-mark hold [包名]` # 暂停包的升级
-- `apt-mark unhold [包名]` # 恢复包的升级
+- `apt-mark unhold [包名]` # 恢复包的升级、
+- `pkg clean` - 清理缓存文件以释放空间。
+- `pkg autoclean` - 自动清理已过时的软件包和缓存。
+- `pkg autoremove` - 自动移除不再使用的依赖包。
+
 
 ### **存储与文件操作**
 - `find [路径] -name [文件名]` # 在指定路径下查找文件
@@ -126,6 +130,217 @@ Termux 是一个非常强大的安卓终端模拟器，可以通过命令行进�
 - `adb devices` # 列出连接的 Android 设备
 - `adb push [本地文件路径] [设备路径]` # 将文件从本地传输到 Android 设备
 - `adb pull [设备文件路径] [本地路径]` # 从 Android 设备拉取文件到本地
+
+
+
+
+### 以下是各类编程语言在Termux的常见命令
+
+## Termux 中安装和使用 Python
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install python` # 安装 Python
+- `python --version` # 检查 Python 版本
+- `pkg install python-pip` # 安装 pip，Python 的包管理工具
+- `pip install --upgrade pip` # 升级 pip 到最新版本
+
+### 创建和运行 Python 脚本
+
+- `mkdir my_python_project` # 创建一个新的项目目录
+- `cd my_python_project` # 进入项目目录
+- `nano script.py` # 使用 nano 编辑器创建并编辑 Python 脚本
+- `print("Hello, Termux!")` # 在脚本中写入代码
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `python script.py` # 运行 Python 脚本
+
+### 安装常用 Python 库
+
+- `pip install requests` # 安装 requests 库用于 HTTP 请求
+- `pip install numpy` # 安装 NumPy 库用于科学计算
+- `pip install pandas` # 安装 Pandas 库用于数据处理
+- `pip install matplotlib` # 安装 Matplotlib 库用于绘图
+
+### 其他常用命令
+
+- `pip list` # 列出已安装的 Python 包
+- `pip uninstall package_name` # 卸载指定的 Python 包
+- `python -m venv venv` # 创建一个虚拟环境
+- `source venv/bin/activate` # 激活虚拟环境
+- `deactivate` # 退出虚拟环境
+
+
+## Termux 中安装和使用 Ruby
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install ruby` # 安装 Ruby
+- `ruby --version` # 检查 Ruby 版本
+
+### 创建和运行 Ruby 脚本
+
+- `mkdir my_ruby_project` # 创建一个新的项目目录
+- `cd my_ruby_project` # 进入项目目录
+- `nano script.rb` # 使用 nano 编辑器创建并编辑 Ruby 脚本
+- `puts "Hello, Termux!"` # 在脚本中写入代码
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `ruby script.rb` # 运行 Ruby 脚本
+
+### 安装常用 Ruby 库
+
+- `gem install bundler` # 安装 Bundler，用于管理 Ruby 项目的依赖
+- `gem install rails` # 安装 Rails 框架（如果需要）
+- `gem install sinatra` # 安装 Sinatra 框架（轻量级 web 应用框架）
+
+### 其他常用命令
+
+- `gem list` # 列出已安装的 Ruby gem
+- `gem uninstall gem_name` # 卸载指定的 Ruby gem
+- `bundle init` # 创建一个新的 Gemfile
+- `bundle install` # 安装 Gemfile 中指定的所有 gem
+
+
+## Termux 中安装和使用 Perl
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install perl` # 安装 Perl
+- `perl --version` # 检查 Perl 版本
+
+### 创建和运行 Perl 脚本
+
+- `mkdir my_perl_project` # 创建一个新的项目目录
+- `cd my_perl_project` # 进入项目目录
+- `nano script.pl` # 使用 nano 编辑器创建并编辑 Perl 脚本
+- `print "Hello, Termux!\n";` # 在脚本中写入代码
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `perl script.pl` # 运行 Perl 脚本
+
+### 安装常用 Perl 模块
+
+- `cpan install Module::Name` # 使用 CPAN 安装常用 Perl 模块（替换 Module::Name 为实际模块名）
+- `cpan install LWP::UserAgent` # 安装 LWP 模块，用于发送 HTTP 请求
+- `cpan install DBI` # 安装 DBI 模块，用于数据库交互
+
+### 其他常用命令
+
+- `cpan` # 启动 CPAN shell，用于管理 Perl 模块
+- `perldoc -l Module::Name` # 查看模块的安装路径
+- `perl -c script.pl` # 检查 Perl 脚本的语法
+
+
+## Termux 中安装和使用 Node.js
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install nodejs` # 安装 Node.js
+- `node --version` # 检查 Node.js 版本
+- `npm --version` # 检查 npm 版本
+
+### 创建和运行 Node.js 脚本
+
+- `mkdir my_node_project` # 创建一个新的项目目录
+- `cd my_node_project` # 进入项目目录
+- `nano script.js` # 使用 nano 编辑器创建并编辑 Node.js 脚本
+- `console.log("Hello, Termux!");` # 在脚本中写入代码
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `node script.js` # 运行 Node.js 脚本
+
+### 安装常用 Node.js 包
+
+- `npm init -y` # 初始化一个新的 npm 项目，并创建 package.json 文件
+- `npm install express` # 安装 Express 框架（用于构建 web 应用）
+- `npm install axios` # 安装 Axios 库（用于发送 HTTP 请求）
+- `npm install nodemon` # 安装 Nodemon（用于自动重启 Node.js 应用）
+
+### 其他常用命令
+
+- `npm list` # 列出已安装的 npm 包
+- `npm uninstall package_name` # 卸载指定的 npm 包
+- `npm update` # 更新所有已安装的 npm 包
+
+
+## Termux 中安装和使用 C/C++
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install clang` # 安装 Clang 编译器（支持 C 和 C++）
+- `clang --version` # 检查 Clang 版本
+
+### 创建和运行 C 程序
+
+- `mkdir my_c_project` # 创建一个新的 C 项目目录
+- `cd my_c_project` # 进入项目目录
+- `nano hello.c` # 使用 nano 编辑器创建并编辑 C 源文件
+- `#include <stdio.h>` # 在源文件中引入标准输入输出库
+- `int main() { printf("Hello, Termux!\n"); return 0; }` # 编写 C 程序
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `clang hello.c -o hello` # 编译 C 程序
+- `./hello` # 运行编译后的程序
+
+### 创建和运行 C++ 程序
+
+- `nano hello.cpp` # 使用 nano 编辑器创建并编辑 C++ 源文件
+- `#include <iostream>` # 在源文件中引入输入输出流库
+- `int main() { std::cout << "Hello, Termux!" << std::endl; return 0; }` # 编写 C++ 程序
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `clang++ hello.cpp -o hello_cpp` # 编译 C++ 程序
+- `./hello_cpp` # 运行编译后的程序
+
+### 其他常用命令
+
+- `clang -o output_file source_file.c` # 编译 C 文件并指定输出文件名称
+- `clang++ -o output_file source_file.cpp` # 编译 C++ 文件并指定输出文件名称
+- `ls` # 列出当前目录的文件
+
+
+## Termux 中安装和使用 Java
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install openjdk-17` # 安装 OpenJDK 17（可以根据需要选择其他版本）
+- `java --version` # 检查 Java 版本
+- `javac --version` # 检查 Java 编译器版本
+
+### 创建和运行 Java 程序
+
+- `mkdir my_java_project` # 创建一个新的 Java 项目目录
+- `cd my_java_project` # 进入项目目录
+- `nano HelloWorld.java` # 使用 nano 编辑器创建并编辑 Java 源文件
+- `public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, Termux!"); } }` # 编写 Java 程序
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `javac HelloWorld.java` # 编译 Java 程序
+- `java HelloWorld` # 运行编译后的程序
+
+### 其他常用命令
+
+- `javac -d bin src/*.java` # 编译所有 Java 源文件并将输出放入 bin 目录
+- `java -cp bin HelloWorld` # 运行指定目录下的 Java 程序
+- `ls` # 列出当前目录的文件
+
+
+
+## Termux 中安装和使用 PHP
+
+- `pkg update && pkg upgrade` # 更新包管理器和已安装的包
+- `pkg install php` # 安装 PHP
+- `php --version` # 检查 PHP 版本
+
+### 创建和运行 PHP 脚本
+
+- `mkdir my_php_project` # 创建一个新的 PHP 项目目录
+- `cd my_php_project` # 进入项目目录
+- `nano script.php` # 使用 nano 编辑器创建并编辑 PHP 脚本
+- `<?php echo "Hello, Termux!"; ?>` # 在脚本中写入 PHP 代码
+- `CTRL + X` 然后按 `Y` 保存并退出 # 保存文件并退出编辑器
+- `php script.php` # 运行 PHP 脚本
+
+### 安装常用 PHP 扩展
+
+- `pkg install php-mbstring` # 安装 mbstring 扩展，用于处理多字节字符串
+- `pkg install php-xml` # 安装 xml 扩展，用于处理 XML 数据
+- `pkg install php-curl` # 安装 curl 扩展，用于发送 HTTP 请求
+
+### 其他常用命令
+
+- `php -l script.php` # 检查 PHP 脚本的语法
+- `php -S localhost:8000` # 启动内置 PHP 服务器并监听 8000 端口
+- `ls` # 列出当前目录的文件
+
 
 
 ---
