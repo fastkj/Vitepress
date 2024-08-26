@@ -65,8 +65,7 @@ export default defineConfig({
         returnToTopLabel: '返回顶部',
         sidebarMenuLabel: '菜单',
         socialLinks: [
-          { icon: 'twitter', link: 'https://fastkj.top' },
-          
+          { icon: 'github', link: 'https://www.fastkj.top/' }
         ],
         search: {
           provider: 'local'
