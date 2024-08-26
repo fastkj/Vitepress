@@ -49,7 +49,6 @@ export default defineConfig({
         nav: [
           { text: '首页', link: '/' },
           { text: '示例', link: '/markdown-examples' },
-          { text: '自定义菜单名称', link: '/custom-link' }
         ],
         sidebar: [
           {
