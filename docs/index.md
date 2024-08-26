@@ -14,12 +14,11 @@ hero:
       text: 个人博客
       link: /markdown-examples
     - theme: alt
-      text: 官方文档
+      text: 部署文档
       link: articles/Tutorial/Hexo
     - theme: alt
       text: vitepress部署笔记
-      link: articles/vitepress
-
+      link: articles/Tutorial/vitepress笔记
 
 features:
   - title: "Quick起始页 🚀"

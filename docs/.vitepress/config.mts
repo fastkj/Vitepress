@@ -36,6 +36,10 @@ export default defineConfig({
   base: '/', // 确保 base 配置正确
   title: "Neat科技",
   description: "A VitePress Site",
+  head: [
+    // 添加 favicon 的配置，确保路径正确
+    ['link', { rel: 'icon', href: '/icons/my-icon.png' }]
+  ],
 
   themeConfig: {
     nav: [
@@ -70,7 +74,7 @@ export default defineConfig({
         ],
         sidebar: [
           {
-            text: '博客搭建教程',
+            text: '部署相关笔记',
             items: getSidebarItems('docs/articles/Tutorial') // 动态生成
           }
         ]
