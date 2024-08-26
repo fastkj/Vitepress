@@ -1,6 +1,7 @@
 
 # Termux 及类似的安卓终端项目
 
+收集的一些Termux安装包： [点击下载](https://pan.quark.cn/s/4f01fda72a73) 打不开下面的项目可以从网盘下载
 ## Termux 相关项目
 
 1. **Termux**
