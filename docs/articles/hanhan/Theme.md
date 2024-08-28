@@ -1,12 +1,12 @@
 ### 阅读主题备份
-
+- [古风主题（二）](https://pan.quark.cn/s/8b28f7872aca)
+- [古风主题（一）](https://pan.quark.cn/s/7f0e8a48b301)
 - [极简·便签风格](https://pan.quark.cn/s/470e31641310)
 - [夜间深色](https://pan.quark.cn/s/125a2e8b2e67)
 - [浅果三色](https://pan.quark.cn/s/e4bebb1d6a93)
 - [枫叶三色](https://pan.quark.cn/s/71620c2554fc)
 - [彩色网格](https://pan.quark.cn/s/eba77da1d0f6)
 - [氢壁纸](https://pan.quark.cn/s/36878f12d790)
-- [古风阅读主题](https://pan.quark.cn/s/76f7a7e78d0c)
 - [古风系列（壁纸）](https://pan.quark.cn/s/8e95168720d8)
 - [古风山水Ⅱ](https://pan.quark.cn/s/a08e5ea74250)
 - [古风山水Ⅰ](https://pan.quark.cn/s/ab51c7b802b2)
@@ -39,6 +39,7 @@
 
 | 阅读主题 | 备份 |
 |:-----|:-----|
+| [古风主题（二）](https://pan.quark.cn/s/8b28f7872aca) | [古风主题（一）](https://pan.quark.cn/s/7f0e8a48b301) |
 | [极简·便签风格](https://pan.quark.cn/s/470e31641310) | [夜间深色](https://pan.quark.cn/s/125a2e8b2e67) |
 | [浅果三色](https://pan.quark.cn/s/e4bebb1d6a93) | [枫叶三色](https://pan.quark.cn/s/71620c2554fc) |
 | [彩色网格](https://pan.quark.cn/s/eba77da1d0f6) | [氢壁纸](https://pan.quark.cn/s/36878f12d790) |
