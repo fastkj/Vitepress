@@ -1,0 +1,189 @@
+### 给输入法添加底部符号！
+
+- 使用MT管理器将皮肤包以`"浏览压缩包"`方式打开
+- `gen.ini`需要改的内容
+- 改底部符号，先将整体布局拉高
+- 路径：`/port/gen.ini/`
+
+[PANEL]的SIZE=`1125`,`592 `
+- `1125`为宽，`592`高
+改后：`SIZE=1125,712`
+
+- 根据自己需求调，我一般都是加`100-120`
+
+### 符号纵向改为横向gen.ini找到[LIST]  
+- LIST_ORDER=1 ###符号横竖 `0竖` `1横`
+- 改完`gen.ini`后到到你想要添加字符面板的页面，将字符框移动至底部。
+
+
+### 稍微解释一下数值
+
+```
+[LIST]
+CELL_STYLE=1201
+CELL_SIZE=144,102
+POS=20,21
+TYPE=0
+LIST_NUM=4
+```
+
+::: tip
+- 144 `符号间距`
+- 102 `为容器内长高拉伸`
+- 20 `为左右移动`
+- 21 `为上下移动`
+- LIST_NUM = 4  `#字符数量`
+::: 
+
+```
+[LIST] #改前
+CELL_STYLE=1201
+CELL_SIZE=144,102
+POS=20,21
+TYPE=0
+LIST_NUM=4
+```
+```
+[LIST] #改后
+CELL_STYLE=1201
+CELL_SIZE=100,102
+POS=20,597
+TYPE=0
+LIST_NUM=7
+```
+
+### 按钮添加
+为了按钮不冲突，自定义按钮从50开始 [KEY50]
+
+```
+VIEW_RECT=左右移动,上下移动,容器宽度,容器高度
+VIEW_RECT=30,10,168,429
+30左右移动
+10上下移动
+168容器宽度
+429容器高度
+```
+
+
+### 如何添加快捷键，关于快捷键可以根据v6工具书查找或者根据图6
+
+```
+CENTER=点击
+UP=上滑
+DOWN=下滑
+LEFT=左滑
+RIGHT=右滑
+HOLD=长按
+```
+
+#### 常用快捷键
+```
+首=F42
+尾=F43
+粘贴=F46
+复制=F45
+剪切=F44
+全选=F47
+```
+
+```
+[KEY50] ### 示例
+BACK_STYLE=1204
+FORE_STYLE=501
+CENTER=F47###添加你所需快捷键
+UP=             ###添加你所需快捷键
+DOWN=
+LEFT=
+RIGHT=
+RIGHT=
+VIEW_RECT=723,591,130,110
+```
+
+### 26建添加以下内容
+
+#### 26键复制下面内容直接添加，在下面添加即可[HINT]
+
+```
+[LIST]
+CELL_STYLE=1201
+CELL_SIZE=100,102
+POS=20,597
+TYPE=0
+LIST_NUM=7
+
+[KEY49]
+BACK_STYLE=1205
+VIEW_RECT=10,591,700,110
+
+[KEY50]
+BACK_STYLE=1204
+FORE_STYLE=501
+CENTER=F47
+VIEW_RECT=723,591,130,110
+
+[KEY51]
+BACK_STYLE=1204
+FORE_STYLE=502
+CENTER=F44
+VIEW_RECT=855,591,130,110
+
+[KEY52]
+BACK_STYLE=1204
+FORE_STYLE=504
+CENTER=F46
+VIEW_RECT=988,591,130,110
+```
+
+
+### 九建添加方式，将两个将以下两个按钮删除
+[LIST][KEY1]添加改好新的
+
+```
+[LIST]
+CELL_STYLE=1201
+CELL_SIZE=100,102
+POS=20,597
+TYPE=0
+LIST_NUM=7
+
+[KEY49]
+BACK_STYLE=1205
+VIEW_RECT=10,591,700,110
+
+[KEY50]
+BACK_STYLE=1204
+FORE_STYLE=501
+CENTER=F47
+VIEW_RECT=723,591,130,110
+
+[KEY51]
+BACK_STYLE=1204
+FORE_STYLE=502
+CENTER=F44
+VIEW_RECT=855,591,130,110
+
+[KEY52]
+BACK_STYLE=1204
+FORE_STYLE=504
+CENTER=F46
+VIEW_RECT=988,591,130,110
+
+[KEY53]
+BACK_STYLE=1204
+FORE_STYLE=503
+CENTER=F45
+VIEW_RECT=5,10,165,143
+
+[KEY54]
+BACK_STYLE=1204
+FORE_STYLE=506
+CENTER=F42
+VIEW_RECT=5,155,165,143
+
+[KEY55]
+BACK_STYLE=1204
+FORE_STYLE=507
+CENTER=F43
+VIEW_RECT=5,297,165,143
+```
+
