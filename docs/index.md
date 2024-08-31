@@ -17,6 +17,9 @@ hero:
       text: 部署文档
       link: articles/Tutorial/Hexo博客创建与部署
     - theme: alt
+      text: 流量卡办理
+      link: https://91haoka.cn/webapp/weixiaodian/index.html?shop_id=376803
+    - theme: alt
       text: Termux命令大全
       link: articles/Tutorial/Termux/Termux命令大全
 
