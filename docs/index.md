@@ -22,6 +22,10 @@ hero:
     - theme: alt
       text: Termux命令大全
       link: articles/Tutorial/Termux/Termux命令大全
+    - theme: alt
+      text: 壁纸主题
+      link: articles/hanhan/Theme
+    
 
 features:
   - title: "Quick起始页 🚀"

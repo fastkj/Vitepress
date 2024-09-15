@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress'
-import fs from 'fs'
-import path from 'path'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 
-function getSidebarItems(dir) {
+function getSidebarItems(dir: string) {
   const fullPath = path.resolve(process.cwd(), dir)
 
-  function walkDir(currentPath, basePath = '') {
-    const items = []
+  function walkDir(currentPath: string, basePath = ''): any[] {
+    const items: any[] = []
     const files = fs.readdirSync(currentPath)
 
     files.forEach(file => {
