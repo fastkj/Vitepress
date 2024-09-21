@@ -1,6 +1,7 @@
 
 ---
 
+- [赛博朋克](https://pan.quark.cn/s/32452bcf3c9d)
 - [蜡笔小新Ⅲ](https://pan.quark.cn/s/ccb29fad5a9a)
 
 ### 阅读主题备份
