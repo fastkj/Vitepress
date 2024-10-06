@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>域名提取工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>域名提取工具 </h3>
+    <h5>每个网站格式不一样一对一适配 </h5>
+    <h5>死链检测：<a href="https://ahrefs.com/zh/broken-link-checker/" target="_blank">https://ahrefs.com/zh/broken-link-checker/</a></h5>
+    <textarea id="inputText" rows="6" placeholder="在此输入内容"></textarea>
+    <button onclick="extractDomains()">提取域名</button>
+    <button onclick="copyText()">复制内容</button>
+    <textarea id="outputText" rows="6" placeholder="提取的域名会显示在这里" readonly></textarea>
+</div>
+
+<script>
+    function extractDomains() {
+        const inputText = document.getElementById('inputText').value;
+        const domainRegex = /https?:\/\/(www\.)?([a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+)/g;
+        let matches = [...inputText.matchAll(domainRegex)].map(match => match[2]);
+        document.getElementById('outputText').value = matches.length ? matches.join('、') + '、' : "未找到域名";
+    }
+
+    function copyText() {
+        const outputText = document.getElementById('outputText').value;
+        if (outputText) {
+            navigator.clipboard.writeText(outputText).then(() => {
+                alert("内容已复制到剪贴板");
+            }).catch(err => {
+                alert("复制失败，请重试");
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
